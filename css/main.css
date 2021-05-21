@@ -1,0 +1,50 @@
+/* Mixins are going next */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend+Deca&family=Train+One&display=swap");
+* {
+  font-family: "Lexend Deca", sans-serif;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url(/all.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.calculator {
+  height: 523px;
+  width: 306px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f3;
+  border-radius: 25px; }
+
+.screen {
+  width: 305px;
+  height: 155px;
+  background-color: black;
+  border-radius: 25px; }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.row {
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-top: 23px; }
+
+.numbers {
+  width: 42px;
+  height: 42px;
+  background: rgba(116, 95, 242, 0.76);
+  box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 24px rgba(174, 174, 192, 0.4);
+  border-radius: 10px; }
+
+/*# sourceMappingURL=main.css.map */
