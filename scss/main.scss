@@ -78,10 +78,19 @@ box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 24px rgba(174, 174, 192, 0.4);
 border-radius: $es;
 border: none;
 margin-right: $xs;
+cursor: pointer;
+}
+
+.numbers:hover {
+background-color: $Hover;
 }
 
 #special {
 background: $pink;
+}
+
+#special:hover {
+background-color: $Hover;
 }
 
 #null {
