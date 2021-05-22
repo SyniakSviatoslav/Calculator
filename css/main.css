@@ -1,8 +1,9 @@
 /* Mixins are going next */
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend+Deca&family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 * {
-  font-family: "Lexend Deca", sans-serif;
-  box-sizing: border-box; }
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
+  font-size: 25px; }
 
 body {
   margin: 0;
@@ -22,29 +23,54 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #f0f0f3;
-  border-radius: 25px; }
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4); }
 
-.screen {
+.blackscreen {
   width: 305px;
   height: 155px;
   background-color: black;
-  border-radius: 25px; }
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.screen {
+  width: 100%;
+  height: 50%;
+  font-size: 40px;
+  background-color: black;
+  border-radius: 25px;
+  color: #f7fff7;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .buttons {
+  border: none;
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  align-items: center;
+  width: 100%;
+  padding-left: 15px; }
 
 .row {
-  padding-right: 24px;
-  padding-left: 24px;
   padding-top: 23px; }
 
 .numbers {
   width: 42px;
   height: 42px;
-  background: rgba(116, 95, 242, 0.76);
+  background: #bbbbf2;
   box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 24px rgba(174, 174, 192, 0.4);
-  border-radius: 10px; }
+  border-radius: 10px;
+  border: none;
+  margin-right: 15px; }
+
+#special {
+  background: rgba(116, 95, 242, 0.76); }
+
+#null {
+  width: 107px; }
 
 /*# sourceMappingURL=main.css.map */
