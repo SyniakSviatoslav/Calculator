@@ -1,8 +1,44 @@
+// class USER {
+//     constructor(firstname, lastname) {
+//         this.firstname = firstname;
+//         this.lastname = lastname;
+//     }
+//     login() {
+//         console.log("log in");
+//     }
+//     logout() {
+//         console.log("log out");
+//     }
+// }
+// class ADMIN extends USER {
+//     constructor(role, deleteUset) {
+//             this.role = role;
+//             this.deleteUset = deleteUset;
+//     }
+//     show(){
+//         console.log(`'`)
+//     }
+// }
+// facebookAPI.get("jobs");
+// facebookAPI.get("jobs/1"); 
+// facebookAPI.post("jobs",{name: "Dima"}); 
+// facebookAPI.put("jobs/id",{name: "Dima new"}); 
+// facebookAPI.delete("jobs/id");
 
-let main = document.getElementById('container')
+
+
+
+
+let body = document.getElementById('container');
+let wrapper = document.getElementById("wrapper");
 let timerstart;
+let current_progress = 0;
+
 class CountdownTimer {
-    static main = document.getElementById('container');
+    static body = document.getElementById('container');
+    static wrapper = document.getElementById("wrapper");
+    static main =  document.getElementsByTagName("body");
+    
 
 
     constructor(time) {
@@ -10,6 +46,8 @@ class CountdownTimer {
         this.timerId = Math.random();
         this.addToTheDOM();
         this.inverVal = "";
+        this.x = time;
+        this.inverval = "";
 
     }
     addToTheDOM() {
@@ -20,44 +58,105 @@ class CountdownTimer {
 
 
         timers.innerText = this.time
-        CountdownTimer.main.appendChild(timers);
+        CountdownTimer.body.appendChild(timers);
+
         console.log(timers)
 
         let stopCount = document.createElement('button');
         stopCount.textContent = 'stop';
-        CountdownTimer.main.appendChild(stopCount);
+        stopCount.setAttribute('class', 'btn');
+        CountdownTimer.wrapper.appendChild(stopCount);
         stopCount.addEventListener("click", () => this.stop());
 
         let startCount = document.createElement('button');
         startCount.textContent = 'start';
-        CountdownTimer.main.appendChild(startCount);
+        startCount.setAttribute('class', 'btn');
+        CountdownTimer.wrapper.appendChild(startCount);
         startCount.addEventListener("click", () => this.start());
 
     }
     newestValue() {
         let numbers = document.getElementById(this.timerId)
         if (this.time > 0) {
-            numbers.innerHTML = +this.time--;
+            numbers.innerHTML = this.time--;
         }
         else {
             numbers.innerText = 0;
-            document.getElementById("show").style.display="block";
+            clearInterval(this.inverVal)
         }
 
     }
     stop() {
-        clearInterval(this.inverVal)
+        clearInterval(this.inverVal);
+       
+            
 
     }
     start(){
+        let y = this.time/100;
+        let c = 1/y;
         this.inverVal = setInterval(()=>{
             this.newestValue();
+            console.log(1)
+            current_progress += c;
+                $("#dynamic")
+                .css("width", current_progress + "%")
+                .attr("aria-valuenow", current_progress)
+                if (current_progress >= 100)
+                        clearInterval(this.interVal);
         },1000)
+    
+          
+           
+            
+            // let current_progress = 0;
+            // // this.interval = setInterval(function() {
+            // //     current_progress += c;
+            //     $("#dynamic")
+            //     .css("width", current_progress + "%")
+                // .attr("aria-valuenow", current_progress)
+                // .text(current_progress + "% Complete");
+            //     if (current_progress >= 100)
+            //         clearInterval(interval);
+                    
+            // }, 1000);
+        
     }
 
 }
 
-let timer = new CountdownTimer(50);
+let timer = new CountdownTimer(6);
+
+
+
+// $(function() {
+//     y = x/100;
+//     c = 1/y;
+    
+//     var current_progress = 0;
+//     var interval = setInterval(function() {
+//         current_progress += c;
+//         $("#dynamic")
+//         .css("width", current_progress + "%")
+//         .attr("aria-valuenow", current_progress)
+//         .text(current_progress + "% Complete");
+//         if (current_progress >= 100)
+//             clearInterval(interval);
+//     }, 1000);
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
 // timerstart = timer.time;
 
 // timer.addToTheDOM();

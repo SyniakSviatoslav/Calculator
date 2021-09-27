@@ -4,7 +4,30 @@
   font-family: "Oswald", sans-serif;
   box-sizing: border-box;
   font-size: 25px; }
-  
+  .progress{
+    height: 30px;
+    width: 100%;
+    background-color: white;
+    margin-top: 50px;
+  }
+
+  #wrapper{
+    display: flex;
+  }
+
+  .btn{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    padding: 20px;
+    background-color: rgb(68, 68, 144);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+  }
   #show {
     display: none;
   }
@@ -12,6 +35,8 @@
     display: block;
   }
   #container {
+    width: 500px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
